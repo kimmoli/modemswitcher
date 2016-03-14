@@ -18,9 +18,5 @@
         <source>UI Template</source>
         <translation>UI-Vorlage</translation>
     </message>
-    <message>
-        <source>Hello Sailors</source>
-        <translation>Hallo Matrosen</translation>
-    </message>
 </context>
 </TS>

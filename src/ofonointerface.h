@@ -13,8 +13,9 @@ public:
 
     Q_INVOKABLE void go();
     Q_PROPERTY(QStringList modems READ _modems NOTIFY modemsChanged)
-
     QStringList _modems() { return foundModems; }
+
+    Q_INVOKABLE void setModem(int index);
 
 signals:
     void modemsChanged();
@@ -29,6 +30,7 @@ private:
     QDBusConnection *bus;
 
     QStringList foundModems;
+    QList<QDBusObjectPath> foundModemPaths;
 
 };
 

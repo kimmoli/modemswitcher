@@ -35,6 +35,8 @@ import Sailfish.Silica 1.0
 Page {
     id: page
 
+    Component.onCompleted: Ofono.go()
+
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
@@ -62,27 +64,20 @@ Page {
             }
             Label {
                 x: Theme.paddingLarge
-                text: qsTr("Hello Sailors")
+                text: "Switch modem"
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
-            }
-            Button
-            {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: "go"
-                onClicked: Ofono.go()
             }
 
             Repeater
             {
                 model: Ofono.modems
                 delegate:
-                Label
+                Button
                 {
-                    x: Theme.paddingLarge
                     text: Ofono.modems[index]
-                    color: Theme.secondaryHighlightColor
-                    font.pixelSize: Theme.fontSizeExtraLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: Ofono.setModem(index)
                 }
             }
         }
