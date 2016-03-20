@@ -24,7 +24,6 @@ OTHER_FILES += qml/modemswitch.qml \
     qml/pages/FirstPage.qml \
     rpm/modemswitch.changes.in \
     rpm/modemswitch.spec \
-    rpm/modemswitch.yaml \
     translations/*.ts \
     modemswitch.desktop
 
